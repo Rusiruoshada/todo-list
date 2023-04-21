@@ -1,16 +1,34 @@
+import { useState } from "react";
+
 const Home = () => {
-    return ( 
-        <div className="container">
-                <h1 className="heading">todo-list</h1>
-            <form action="#" >
-                <input type="text" placeholder= "Add items" />
-                <button type='submit'>Add</button>
-            </form>
-            <div>
-                <ul></ul>
-            </div>
-        </div>
-     );
-}
- 
+  const [items, setItems] = useState("");
+  const [item, setItem] = useState("");
+
+  const handelChange = (event) => {
+    const { value } = event.target;
+    setItems(value);
+  };
+
+  const formSubmit = (event) => {
+    setItem(items);
+    event.preventDefault();
+
+  };
+
+
+
+  return (
+    <div className="container">
+      <div className="heading">
+        <h1>todo-list</h1>
+      </div>
+      <form onSubmit={formSubmit}>
+        <input onChange={handelChange} type="text" placeholder="Add items" />
+        <button type="submit">Add</button>
+      </form>
+        {item}
+    </div>
+  );
+};
+
 export default Home;

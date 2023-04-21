@@ -14,17 +14,60 @@ body {
   align-items: center;
 }
 
-.container{
+.container {
   background-color: #f1f5f8;
   padding:2rem;
   border-radius: 20px;
   width: 100%;
   height: auto;
   min-height: 500px;
-  max-width: 500px;
+  max-width: 300px;
   min-width:250px;
   background-image: radial-gradient(#bfc0c1 7.2%, transparent 0);
   background-size:25px 25px;
+  text-align: center;
+  box-shadow: 4px 10px 15px rgba(0, 0, 0,0.2);
 }
 
+.heading h1{
+  transform: rotate(2deg);
+  padding: 0.2rem 1.2rem;
+  border-radius: 25% 5% 20% 5%/5% 20% 25% 20%;
+  background-color: #fdcb6e;
+  font-size: 1.5rem;
+  width: fit-content;
+  margin: 10px auto 20px auto;
+}
 
+form input{
+  border:none;
+  background-color: transparent;
+  border-bottom: 3px  dotted #fdcb6e;
+  padding:10px 0 5px 0;
+  color:rgb(58, 58, 58);
+  font-size: 1rem;
+  font-family: "Architects Daughter", cursive;
+  width: 160px;
+}
+
+form input::-webkit-input-placeholder{
+  color: #868686;
+  font-family: "Architects Daughter", cursive;
+}
+
+form input:focus{
+  outline: none;
+}
+
+form button {
+  display: inline;
+  margin-left: 10px;
+  padding:8px 20px;
+  border:none;
+  background-color:#fdcb6e;
+  border-radius:5px
+}
+
+ul li{
+  text-align: left;
+}
