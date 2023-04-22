@@ -1,34 +1,90 @@
-import { useState } from "react";
+// import { useState } from "react";
+
+// const Home = () => {
+//   const [inputText, setInputText] = useState("");
+//   const [items, setItems] = useState([]);
+
+//   const handleChange = (event) => {
+//     const newValue = event.target.value;
+//     setInputText(newValue);
+//   };
+
+//   const addItem = () => {
+//     setItems((prevItems) => {
+//       return [...prevItems, inputText];
+//     });
+//     setInputText("");
+//   };
+
+//   return (
+//     <div className="container">
+//       <div className="heading">
+//         <h1>To-Do list</h1>
+//       </div>
+//       <input
+//         onChange={handleChange}
+//         type="text"
+//         placeholder="Add items"
+//         value={inputText}
+//       />
+//       <button onClick={addItem} type="submit">
+//         Add
+//       </button>
+//       <div>
+//         <ul>
+//           {items.map((todoItem) => (
+//             <li>&hearts; {todoItem}</li>
+//           ))}
+//         </ul>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Home;
+
+import {useState} from 'react';
 
 const Home = () => {
-  const [items, setItems] = useState("");
-  const [item, setItem] = useState("");
 
-  const handelChange = (event) => {
-    const { value } = event.target;
-    setItems(value);
-  };
+const [inputText, setInputText] = useState('');
+const [items, setItems] = useState([]);
 
-  const formSubmit = (event) => {
-    setItem(items);
-    event.preventDefault();
+const handleChange = (event) => {
+    const newValue = event.target.value;
+    setInputText(newValue);
+}
 
-  };
+const addItem = () => {
+        setItems((prevItems) => {
+          return [...prevItems, inputText];
+        });
+        setInputText("");
+      };
 
-
-
-  return (
-    <div className="container">
-      <div className="heading">
-        <h1>todo-list</h1>
-      </div>
-      <form onSubmit={formSubmit}>
-        <input onChange={handelChange} type="text" placeholder="Add items" />
-        <button type="submit">Add</button>
-      </form>
-        {item}
-    </div>
-  );
-};
-
+    return ( 
+        <div className="container">
+              <div className="heading">
+                 <h1>To-Do list</h1>
+               </div>
+               <input   
+                    onChange={handleChange}
+                    type="text"
+                    placeholder="Add items"
+                    value = {inputText}
+               />
+               <button onClick={addItem} type="submit">
+                 Add
+               </button>
+               <div>
+                <ul>
+                    {items.map((todoItems) => (
+                        <li>&hearts; {todoItems}</li>
+                    ))}
+                </ul>
+               </div>
+        </div>
+     );
+}
+ 
 export default Home;
