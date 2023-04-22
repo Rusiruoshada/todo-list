@@ -63,8 +63,8 @@ const Home = () => {
   };
 
   const deleteItem = (index) => {
-    setItems((prevItems) => {
-      return prevItems.filter((item, i) => i !== index);
+      setItems((prevItems) => {
+        return prevItems.filter((item, i) => i !== index);
     });
   };
 
@@ -85,7 +85,7 @@ const Home = () => {
       <div>
         <ul>
           {items.map((todoItems,index) => (
-            <li key = {index} style={{textDecoration: todoItems.textDecoration}}>
+            <li key = {index}>
               &hearts; {todoItems}{" "}
               <button onClick={() => deleteItem(index)} className="btnDelete">
                 ×
